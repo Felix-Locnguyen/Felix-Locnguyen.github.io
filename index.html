@@ -1,87 +1,1283 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Felix Nguyen | AI Engineer</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #0f172a;
-            color: #f1f5f9;
-            line-height: 1.6;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Julian Vance | Software Engineer & Systems Architect</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Plus Jakarta Sans for crisp Apple-style typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind Configuration for Nature Green Palette -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          colors: {
+            forest: {
+              900: '#112219',
+              800: '#1E3A2B', // Primary Dark / Market Green
+              700: '#2E523D',
+              600: '#4A6B53', // Primary Accent / Fern Green
+              500: '#5C8266',
+              400: '#7FA06B', // Secondary Accent / Foliage Green
+              300: '#A9C49A',
+              200: '#CBDDC1',
+              100: '#E4EFE0',
+              50: '#F2F6F3',  // Tranquil Soft Green Background
+            },
+            leafBorder: '#E2EBE5',
+          },
+          boxShadow: {
+            'apple': '0 8px 30px rgba(30, 58, 43, 0.06)',
+            'apple-hover': '0 20px 40px rgba(30, 58, 43, 0.12)',
+            'glass': '0 8px 32px 0 rgba(30, 58, 43, 0.05)',
+          }
         }
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 60px 20px;
-        }
-        h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
-        }
-        h2 {
-            color: #38bdf8;
-            margin-top: 40px;
-        }
-        .highlight {
-            color: #38bdf8;
-            font-weight: bold;
-        }
-        .card {
-            background: #1e293b;
-            padding: 20px;
-            border-radius: 12px;
-            margin-top: 20px;
-        }
-        footer {
-            margin-top: 60px;
-            text-align: center;
-            color: #94a3b8;
-            font-size: 14px;
-        }
-    </style>
+      }
+    }
+  </script>
+
+  <style>
+    /* Smooth Apple-style glassmorphism */
+    .glass-nav {
+      background: rgba(242, 246, 243, 0.78);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    
+    .glass-pill {
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    /* Subtle custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F2F6F3;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #CBDDC1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #7FA06B;
+    }
+
+    /* Gentle pulsing light for available status */
+    @keyframes subtlePulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.15); }
+    }
+    .status-ping {
+      animation: subtlePulse 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+  </style>
 </head>
-<body>
 
-    <div class="container">
-        <h1>Felix Nguyen</h1>
-        <p class="highlight">AI Engineer in Progress 🚀</p>
+<body class="bg-forest-50 text-forest-800 font-sans antialiased selection:bg-forest-400 selection:text-white relative overflow-x-hidden">
 
-        <div class="card">
-            <h2>About Me</h2>
-            <p>
-                Tôi là Felix Nguyen, sinh viên ngành Công nghệ Thông tin tại FPT Polytechnic.
-                Tôi đang theo đuổi lĩnh vực Trí tuệ nhân tạo (AI), tập trung vào 
-                <span class="highlight">Machine Learning</span> và 
-                <span class="highlight">Deep Learning</span>.
-            </p>
-            <p>
-                Tôi đặc biệt quan tâm đến việc xử lý dữ liệu, xây dựng pipeline học máy 
-                và tối ưu mô hình dự đoán nhằm tạo ra các hệ thống AI có khả năng ứng dụng thực tế.
-            </p>
-            <p>
-                Mục tiêu dài hạn của tôi là trở thành một AI Engineer chuyên về 
-                các hệ thống thông minh và mô hình học sâu.
-            </p>
+  <!-- Ambient background glow elements mimicking forest canopies -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+    <div class="absolute -top-40 -right-40 w-[600px] h-[600px] bg-forest-200/40 rounded-full blur-3xl opacity-60"></div>
+    <div class="absolute top-[40%] -left-32 w-[550px] h-[550px] bg-forest-300/25 rounded-full blur-3xl opacity-70"></div>
+    <div class="absolute bottom-10 right-10 w-[500px] h-[500px] bg-forest-100/60 rounded-full blur-3xl opacity-80"></div>
+  </div>
+
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-leafBorder transition-all duration-300" id="main-header">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo / Name -->
+      <a href="#hero" class="flex items-center gap-3 group focus:outline-none">
+        <div class="w-10 h-10 rounded-2xl bg-forest-800 flex items-center justify-center text-forest-50 transition-transform duration-300 group-hover:scale-105 group-hover:bg-forest-700 shadow-sm">
+          <i data-lucide="trees" class="w-5 h-5 text-forest-300"></i>
         </div>
-
-        <div class="card">
-            <h2>Technical Focus</h2>
-            <ul>
-                <li>Machine Learning Algorithms</li>
-                <li>Deep Learning & Neural Networks</li>
-                <li>Data Preprocessing & Feature Engineering</li>
-                <li>Model Evaluation & Optimization</li>
-            </ul>
+        <div>
+          <span class="font-bold text-lg tracking-tight text-forest-800 group-hover:text-forest-600 transition-colors">Julian Vance</span>
+          <span class="block text-[11px] font-medium text-forest-500 uppercase tracking-widest -mt-0.5">Software Engineer</span>
         </div>
+      </a>
 
-        <footer>
-            © 2026 Felix Nguyen | AI Portfolio
-        </footer>
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center gap-1 bg-white/70 p-1.5 rounded-full border border-leafBorder shadow-sm">
+        <a href="#about" class="px-4 py-2 text-sm font-medium text-forest-700 hover:text-forest-900 hover:bg-forest-100/70 rounded-full transition-all duration-200">About</a>
+        <a href="#education" class="px-4 py-2 text-sm font-medium text-forest-700 hover:text-forest-900 hover:bg-forest-100/70 rounded-full transition-all duration-200">Education</a>
+        <a href="#skills" class="px-4 py-2 text-sm font-medium text-forest-700 hover:text-forest-900 hover:bg-forest-100/70 rounded-full transition-all duration-200">Skills</a>
+        <a href="#projects" class="px-4 py-2 text-sm font-medium text-forest-700 hover:text-forest-900 hover:bg-forest-100/70 rounded-full transition-all duration-200">Projects</a>
+        <a href="#certifications" class="px-4 py-2 text-sm font-medium text-forest-700 hover:text-forest-900 hover:bg-forest-100/70 rounded-full transition-all duration-200">Certifications</a>
+        <a href="#contact" class="px-4 py-2 text-sm font-medium text-forest-700 hover:text-forest-900 hover:bg-forest-100/70 rounded-full transition-all duration-200">Contact</a>
+      </nav>
+
+      <!-- CTA Button & Mobile Menu Toggle -->
+      <div class="flex items-center gap-3">
+        <a href="#contact" onclick="handleDownloadCV(event)" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold bg-forest-800 hover:bg-forest-600 text-white shadow-sm hover:shadow transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
+          <i data-lucide="download" class="w-4 h-4"></i>
+          <span>Download CV</span>
+        </a>
+
+        <!-- Mobile hamburger toggle button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-xl text-forest-800 hover:bg-forest-100/60 focus:outline-none transition-colors" aria-label="Toggle Navigation">
+          <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+        </button>
+      </div>
+
     </div>
+
+    <!-- Mobile dropdown navigation panel -->
+    <div id="mobile-menu" class="hidden md:hidden px-6 pt-3 pb-6 border-b border-leafBorder bg-forest-50/95 backdrop-blur-xl">
+      <div class="flex flex-col space-y-2">
+        <a href="#about" class="mobile-nav-link px-4 py-2.5 rounded-xl font-medium text-forest-800 hover:bg-forest-100 transition-colors">About</a>
+        <a href="#education" class="mobile-nav-link px-4 py-2.5 rounded-xl font-medium text-forest-800 hover:bg-forest-100 transition-colors">Education</a>
+        <a href="#skills" class="mobile-nav-link px-4 py-2.5 rounded-xl font-medium text-forest-800 hover:bg-forest-100 transition-colors">Skills</a>
+        <a href="#projects" class="mobile-nav-link px-4 py-2.5 rounded-xl font-medium text-forest-800 hover:bg-forest-100 transition-colors">Projects</a>
+        <a href="#certifications" class="mobile-nav-link px-4 py-2.5 rounded-xl font-medium text-forest-800 hover:bg-forest-100 transition-colors">Certifications</a>
+        <a href="#contact" class="mobile-nav-link px-4 py-2.5 rounded-xl font-medium text-forest-800 hover:bg-forest-100 transition-colors">Contact</a>
+        <button onclick="handleDownloadCV(event)" class="w-full mt-3 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold bg-forest-800 text-white shadow-sm">
+          <i data-lucide="download" class="w-4 h-4"></i>
+          <span>Download CV</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative z-10">
+    <!-- Hero Section with Lush Forest Photography & Apple Frosted Glass Overlay -->
+    <section id="hero" class="relative overflow-hidden pt-28 sm:pt-36 pb-16 sm:pb-24 border-b border-leafBorder">
+      
+      <!-- Forest Background Image with Vivid Clarity & Natural Sunlight -->
+      <div class="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2070&auto=format&fit=crop" 
+          alt="Lush misty pine forest with sunbeams canopy" 
+          class="w-full h-full object-cover object-center filter saturate-110 contrast-105 brightness-[0.98]"
+          loading="eager"
+        />
+        <!-- Subtle natural vignette & seamless bottom blend to keep trees crystal clear -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-forest-50 pointer-events-none"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.08)_0%,_rgba(17,34,25,0.25)_100%)] pointer-events-none"></div>
+      </div>
+
+      <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        
+        <!-- Left Column: Headline and Bio encased in Apple Frosted Glass Card -->
+        <div class="lg:col-span-7 glass-card p-6 sm:p-10 rounded-[2.5rem] border border-white/60 shadow-apple-hover backdrop-blur-xl bg-white/85 space-y-6 text-center lg:text-left transition-all duration-300">
+          
+          <!-- Availability Tag -->
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-forest-300/80 bg-forest-50/80 shadow-sm">
+            <span class="w-2.5 h-2.5 rounded-full bg-forest-400 status-ping"></span>
+            <span class="text-xs font-semibold tracking-wide text-forest-700">Open to Full-Time & Research Roles</span>
+          </div>
+
+          <!-- Hero Headline -->
+          <h1 class="text-3xl sm:text-5xl lg:text-[3.25rem] font-extrabold tracking-tight text-forest-900 leading-[1.15]">
+            Engineering resilient systems with <span class="bg-gradient-to-r from-forest-800 via-forest-600 to-forest-400 bg-clip-text text-transparent">organic simplicity.</span>
+          </h1>
+
+          <!-- Tagline & Brief Bio Summary -->
+          <p class="text-base sm:text-lg text-forest-700 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0">
+            Hi, I’m <strong class="font-semibold text-forest-900">Julian Vance</strong> — an IT & Distributed Systems Engineer specializing in cloud-native microservices, scalable distributed storage, and intuitive developer platforms.
+          </p>
+
+          <!-- Core stats pill bar -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 pt-1 text-xs sm:text-sm text-forest-700">
+            <div class="flex items-center gap-2 bg-forest-100/70 px-3 py-1.5 rounded-xl border border-forest-200/60">
+              <i data-lucide="shield-check" class="w-4 h-4 text-forest-600"></i>
+              <span class="font-medium">99.99% Uptime Architect</span>
+            </div>
+            <div class="flex items-center gap-2 bg-forest-100/70 px-3 py-1.5 rounded-xl border border-forest-200/60">
+              <i data-lucide="cpu" class="w-4 h-4 text-forest-600"></i>
+              <span class="font-medium">High-Throughput Go & Rust</span>
+            </div>
+            <div class="flex items-center gap-2 bg-forest-100/70 px-3 py-1.5 rounded-xl border border-forest-200/60">
+              <i data-lucide="leaf" class="w-4 h-4 text-forest-600"></i>
+              <span class="font-medium">Sustainable Green Tech</span>
+            </div>
+          </div>
+
+          <!-- Primary Actions -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#projects" class="px-7 py-3.5 rounded-2xl font-semibold text-sm bg-forest-800 text-white shadow-apple hover:bg-forest-600 hover:shadow-apple-hover transition-all duration-300 hover:-translate-y-0.5 flex items-center gap-2">
+              <span>Explore Projects</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <a href="#contact" class="px-7 py-3.5 rounded-2xl font-semibold text-sm bg-white border border-leafBorder text-forest-800 shadow-sm hover:bg-forest-50 hover:border-forest-300 transition-all duration-300 hover:-translate-y-0.5 flex items-center gap-2">
+              <i data-lucide="mail" class="w-4 h-4 text-forest-600"></i>
+              <span>Let's Connect</span>
+            </a>
+          </div>
+
+          <!-- Social Quick Links -->
+          <div class="flex items-center justify-center lg:justify-start gap-5 pt-1 text-forest-700">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-forest-900 transition-colors p-2 hover:bg-forest-100/60 rounded-full" aria-label="GitHub">
+              <i data-lucide="github" class="w-5 h-5"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-forest-900 transition-colors p-2 hover:bg-forest-100/60 rounded-full" aria-label="LinkedIn">
+              <i data-lucide="linkedin" class="w-5 h-5"></i>
+            </a>
+            <a href="mailto:julian.vance@example.dev" class="hover:text-forest-900 transition-colors p-2 hover:bg-forest-100/60 rounded-full" aria-label="Email">
+              <i data-lucide="at-sign" class="w-5 h-5"></i>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Personal Portrait & Profile Card in Apple Frosted Glass -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-md">
+            
+            <!-- Apple-style Card Display with Personal Portrait -->
+            <div class="relative overflow-hidden rounded-[2.5rem] border border-white/60 shadow-apple-hover glass-card backdrop-blur-2xl p-6 sm:p-7 space-y-5 group">
+              
+              <!-- Personal Portrait Frame with Forest Ambient Ring -->
+              <div class="relative mx-auto w-36 h-36 sm:w-44 sm:h-44 rounded-full p-1.5 bg-gradient-to-tr from-forest-800 via-forest-400 to-forest-200 shadow-apple">
+                <div class="w-full h-full rounded-full overflow-hidden border-2 border-white bg-forest-100">
+                  <img 
+                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop" 
+                    alt="Julian Vance Portrait" 
+                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </div>
+                <!-- Active Online Indicator Ring -->
+                <span class="absolute bottom-2 right-2 w-6 h-6 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center shadow-sm" title="Online & Available">
+                  <span class="w-2.5 h-2.5 rounded-full bg-white animate-pulse"></span>
+                </span>
+              </div>
+
+              <!-- Profile Identity -->
+              <div class="text-center space-y-1">
+                <h3 class="text-xl font-extrabold text-forest-900">Julian Vance</h3>
+                <p class="text-xs font-mono text-forest-600 font-medium">Software Engineer & Systems Architect</p>
+                <div class="flex items-center justify-center gap-2 pt-1 text-xs text-forest-700">
+                  <span class="inline-flex items-center gap-1 bg-forest-100/70 px-2.5 py-0.5 rounded-full border border-forest-200">
+                    <i data-lucide="map-pin" class="w-3 h-3 text-forest-600"></i>
+                    <span>San Francisco, CA</span>
+                  </span>
+                  <span class="inline-flex items-center gap-1 bg-forest-100/70 px-2.5 py-0.5 rounded-full border border-forest-200">
+                    <i data-lucide="sparkles" class="w-3 h-3 text-forest-600"></i>
+                    <span>Ex-Stripe / Cloud</span>
+                  </span>
+                </div>
+              </div>
+
+              <!-- Terminal Spec Window -->
+              <div class="bg-forest-900/95 rounded-2xl p-3.5 text-left font-mono text-xs text-forest-100 space-y-1.5 shadow-inner border border-white/10">
+                <div class="flex items-center gap-1.5 pb-1 border-b border-forest-800 text-forest-400 text-[10px]">
+                  <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block"></span>
+                  <span class="ml-2">node: cluster-west-01</span>
+                </div>
+                <p class="text-forest-300 text-[11px]">$ sysctl -n kernel.cluster</p>
+                <p class="text-emerald-400 text-[11px]">» 8 nodes online | 0% packet loss</p>
+                <p class="text-forest-300 text-[11px]">$ tree /sys/capabilities</p>
+                <p class="text-forest-200 text-[11px]">├── microservices (Go, gRPC)<br>├── distributed-db (Raft, RocksDB)<br>└── cloud-iac (Terraform, EKS)</p>
+              </div>
+
+            </div>
+
+            <!-- Floating Micro Tag -->
+            <div class="absolute -bottom-3 -right-2 bg-forest-800 text-white border border-forest-600 px-4 py-2 rounded-2xl shadow-apple flex items-center gap-2 text-xs font-semibold">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-forest-300"></i>
+              <span>Active in Production</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- GitHub Activity & Contribution Calendar Card -->
+      <div class="mt-12 glass-card rounded-[2.5rem] border border-white/70 shadow-apple-hover p-6 sm:p-8 backdrop-blur-xl bg-white/85">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-leafBorder">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-2xl bg-forest-800 text-white flex items-center justify-center shadow-sm">
+              <i data-lucide="github" class="w-5 h-5 text-forest-300"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-base sm:text-lg font-bold text-forest-900">GitHub Contributions</h3>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded-full bg-forest-100 text-forest-800 border border-forest-200">@julianvance</span>
+              </div>
+              <p class="text-xs text-forest-600">1,428 contributions in the past year across open-source & core repositories</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3 sm:gap-4 text-xs font-semibold text-forest-800">
+            <div class="flex items-center gap-1.5 bg-forest-50 px-3 py-1.5 rounded-xl border border-leafBorder">
+              <i data-lucide="flame" class="w-4 h-4 text-amber-600"></i>
+              <span>Streak: <strong>84 Days</strong></span>
+            </div>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-forest-800 hover:bg-forest-600 text-white transition-colors">
+              <span>View Profile</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Heatmap Calendar Grid Container -->
+        <div class="pt-5 overflow-x-auto pb-2">
+          <div class="min-w-[720px]">
+            <!-- Months Label Row -->
+            <div class="flex text-[11px] font-mono text-forest-500 justify-between px-2 mb-2">
+              <span>Oct</span>
+              <span>Nov</span>
+              <span>Dec</span>
+              <span>Jan</span>
+              <span>Feb</span>
+              <span>Mar</span>
+              <span>Apr</span>
+              <span>May</span>
+              <span>Jun</span>
+              <span>Jul</span>
+              <span>Aug</span>
+              <span>Sep</span>
+            </div>
+
+            <!-- Heatmap Week Columns Generated Dynamically -->
+            <div id="github-heatmap" class="flex gap-1.5 justify-between">
+              <!-- Heatmap cells inserted via JavaScript -->
+            </div>
+
+            <!-- Heatmap Legend & Summary -->
+            <div class="flex items-center justify-between pt-4 mt-3 border-t border-leafBorder text-[11px] text-forest-600">
+              <div class="flex items-center gap-2">
+                <span>Less</span>
+                <div class="flex items-center gap-1">
+                  <span class="w-3 h-3 rounded-[3px] bg-forest-100 border border-forest-200/50 inline-block" title="0 commits"></span>
+                  <span class="w-3 h-3 rounded-[3px] bg-forest-300 inline-block" title="1-3 commits"></span>
+                  <span class="w-3 h-3 rounded-[3px] bg-forest-400 inline-block" title="4-6 commits"></span>
+                  <span class="w-3 h-3 rounded-[3px] bg-forest-600 inline-block" title="7-9 commits"></span>
+                  <span class="w-3 h-3 rounded-[3px] bg-forest-800 inline-block" title="10+ commits"></span>
+                </div>
+                <span>More</span>
+              </div>
+              <span class="font-mono text-forest-700">Highest daily velocity: <strong>23 commits / day</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-20 bg-gradient-to-b from-transparent via-forest-100/30 to-transparent border-t border-leafBorder/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-xs font-bold tracking-widest text-forest-600 uppercase bg-forest-100 px-3 py-1 rounded-full border border-forest-200">Background</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-forest-900 tracking-tight mt-3">Philosophy & Academic Path</h2>
+          <p class="text-forest-600 text-sm sm:text-base mt-2">Harmonizing computer science fundamentals with sustainable software engineering.</p>
+        </div>
+
+        <!-- Bento Box Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Bento Box 1: Engineering Philosophy (Spans 2 cols on md) -->
+          <div class="md:col-span-2 glass-card p-8 rounded-3xl border border-leafBorder shadow-apple hover:shadow-apple-hover transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-2xl bg-forest-100 text-forest-800 flex items-center justify-center mb-6">
+                <i data-lucide="compass" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold text-forest-900 tracking-tight mb-3">The Organic Systems Perspective</h3>
+              <p class="text-forest-700 leading-relaxed text-sm sm:text-base">
+                Just like natural ecosystems thrive on balance, modular interdependence, and resilience, robust software architecture must prioritize decoupled services, clear telemetry, and graceful degradation under pressure. I believe in clean code that is self-documenting and architectures that consume minimal energy while delivering peak throughput.
+              </p>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-4 pt-8 mt-6 border-t border-leafBorder">
+              <div>
+                <span class="block text-2xl font-extrabold text-forest-900 tracking-tight">4+</span>
+                <span class="text-xs text-forest-500 font-medium">Years Active Coding</span>
+              </div>
+              <div>
+                <span class="block text-2xl font-extrabold text-forest-900 tracking-tight">40k+</span>
+                <span class="text-xs text-forest-500 font-medium">Lines of Clean Code</span>
+              </div>
+              <div>
+                <span class="block text-2xl font-extrabold text-forest-900 tracking-tight">15+</span>
+                <span class="text-xs text-forest-500 font-medium">Open Source Contributions</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento Box 2: Work Ethic & Principles -->
+          <div class="glass-card p-8 rounded-3xl border border-leafBorder shadow-apple hover:shadow-apple-hover transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-2xl bg-forest-100 text-forest-800 flex items-center justify-center mb-6">
+                <i data-lucide="sparkles" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold text-forest-900 tracking-tight mb-3">Core Engineering Principles</h3>
+              <ul class="space-y-3 text-sm text-forest-700">
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-forest-500 mt-0.5 flex-shrink-0"></i>
+                  <span>Zero-Trust Security by design.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-forest-500 mt-0.5 flex-shrink-0"></i>
+                  <span>Deterministic unit & integration testing.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-forest-500 mt-0.5 flex-shrink-0"></i>
+                  <span>Apple-grade UX simplicity for developers.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-forest-500 mt-0.5 flex-shrink-0"></i>
+                  <span>Low latency & green energy footprint.</span>
+                </li>
+              </ul>
+            </div>
+            <div class="mt-6 pt-4 border-t border-leafBorder flex items-center gap-2 text-xs font-semibold text-forest-600">
+              <i data-lucide="zap" class="w-4 h-4 text-forest-400"></i>
+              <span>High Agility & Continuous Delivery</span>
+            </div>
+          </div>
+
+          <!-- Bento Box 3: Education & Academics (Spans full 3 columns) -->
+          <div id="education" class="md:col-span-3 glass-card p-8 sm:p-10 rounded-3xl border border-leafBorder shadow-apple">
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 pb-6 border-b border-leafBorder gap-4">
+              <div class="flex items-center gap-4">
+                <div class="w-14 h-14 rounded-2xl bg-forest-800 text-forest-100 flex items-center justify-center shadow-sm">
+                  <i data-lucide="graduation-cap" class="w-7 h-7"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl sm:text-2xl font-bold text-forest-900 tracking-tight">University of California, Berkeley</h3>
+                  <p class="text-sm font-medium text-forest-600">Bachelor of Science in Computer Science & Engineering</p>
+                </div>
+              </div>
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-forest-100 text-forest-800 border border-forest-200">Class of 2024</span>
+                <span class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-forest-800 text-white">GPA: 3.92 / 4.0</span>
+              </div>
+            </div>
+
+            <!-- Academic Highlights Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="p-5 rounded-2xl bg-forest-50/70 border border-leafBorder">
+                <div class="flex items-center gap-2 text-forest-800 font-semibold text-sm mb-2">
+                  <i data-lucide="award" class="w-4 h-4 text-forest-600"></i>
+                  <span>Honors & Distinctions</span>
+                </div>
+                <p class="text-xs text-forest-700 leading-relaxed">
+                  Summa Cum Laude, Dean's Honors List (All 8 Semesters), Recipient of the IEEE Student Excellence Award.
+                </p>
+              </div>
+
+              <div class="p-5 rounded-2xl bg-forest-50/70 border border-leafBorder">
+                <div class="flex items-center gap-2 text-forest-800 font-semibold text-sm mb-2">
+                  <i data-lucide="book-open" class="w-4 h-4 text-forest-600"></i>
+                  <span>Key Coursework</span>
+                </div>
+                <p class="text-xs text-forest-700 leading-relaxed">
+                  Distributed Systems, Advanced Algorithms, Operating Systems Kernel Design, Database Internals, Machine Learning Systems.
+                </p>
+              </div>
+
+              <div class="p-5 rounded-2xl bg-forest-50/70 border border-leafBorder">
+                <div class="flex items-center gap-2 text-forest-800 font-semibold text-sm mb-2">
+                  <i data-lucide="flask-conical" class="w-4 h-4 text-forest-600"></i>
+                  <span>Research Capstone</span>
+                </div>
+                <p class="text-xs text-forest-700 leading-relaxed">
+                  Published research on consensus protocols for edge nodes under high packet-drop environments.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold tracking-widest text-forest-600 uppercase bg-forest-100 px-3 py-1 rounded-full border border-forest-200">Competencies</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-forest-900 tracking-tight mt-3">Technical Arsenal</h2>
+        <p class="text-forest-600 text-sm sm:text-base mt-2">Carefully curated tools for crafting high-performance, robust applications.</p>
+      </div>
+
+      <!-- Skills Cards Matrix -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Category: Backend & Architecture -->
+        <div class="glass-card p-6 sm:p-8 rounded-3xl border border-leafBorder shadow-apple hover:shadow-apple-hover transition-all duration-300">
+          <div class="flex items-center justify-between mb-5">
+            <div class="w-10 h-10 rounded-xl bg-forest-100 text-forest-800 flex items-center justify-center">
+              <i data-lucide="server" class="w-5 h-5"></i>
+            </div>
+            <span class="text-xs font-mono font-medium text-forest-500">Core Specialty</span>
+          </div>
+          <h3 class="text-lg font-bold text-forest-900 mb-2">Backend & Architecture</h3>
+          <p class="text-xs text-forest-600 mb-5 leading-relaxed">Concurrent APIs, microservices, gRPC protocols, and robust event loops.</p>
+          
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-100 text-forest-800 border border-forest-200">Go (Golang)</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-100 text-forest-800 border border-forest-200">Python / FastAPI</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-100 text-forest-800 border border-forest-200">Node.js / TypeScript</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-100 text-forest-800 border border-forest-200">Rust (Systems)</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-50 text-forest-700 border border-leafBorder">gRPC & Protobuf</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-50 text-forest-700 border border-leafBorder">GraphQL</span>
+          </div>
+        </div>
+
+        <!-- Category: Cloud & DevOps -->
+        <div class="glass-card p-6 sm:p-8 rounded-3xl border border-leafBorder shadow-apple hover:shadow-apple-hover transition-all duration-300">
+          <div class="flex items-center justify-between mb-5">
+            <div class="w-10 h-10 rounded-xl bg-forest-100 text-forest-800 flex items-center justify-center">
+              <i data-lucide="cloud" class="w-5 h-5"></i>
+            </div>
+            <span class="text-xs font-mono font-medium text-forest-500">Scalability</span>
+          </div>
+          <h3 class="text-lg font-bold text-forest-900 mb-2">Cloud, Infrastructure & CI/CD</h3>
+          <p class="text-xs text-forest-600 mb-5 leading-relaxed">Automated provisioning, multi-region failovers, and telemetry.</p>
+          
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-100 text-forest-800 border border-forest-200">AWS (EKS, Lambda)</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-100 text-forest-800 border border-forest-200">Docker</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-100 text-forest-800 border border-forest-200">Kubernetes</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-100 text-forest-800 border border-forest-200">Terraform (IaC)</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-50 text-forest-700 border border-leafBorder">GitHub Actions</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-50 text-forest-700 border border-leafBorder">Prometheus & Grafana</span>
+          </div>
+        </div>
+
+        <!-- Category: Frontend Engineering -->
+        <div class="glass-card p-6 sm:p-8 rounded-3xl border border-leafBorder shadow-apple hover:shadow-apple-hover transition-all duration-300">
+          <div class="flex items-center justify-between mb-5">
+            <div class="w-10 h-10 rounded-xl bg-forest-100 text-forest-800 flex items-center justify-center">
+              <i data-lucide="layout" class="w-5 h-5"></i>
+            </div>
+            <span class="text-xs font-mono font-medium text-forest-500">UI / UX</span>
+          </div>
+          <h3 class="text-lg font-bold text-forest-900 mb-2">Frontend Engineering</h3>
+          <p class="text-xs text-forest-600 mb-5 leading-relaxed">Apple-like aesthetics, fluid micro-interactions, responsive states.</p>
+          
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-100 text-forest-800 border border-forest-200">React 19</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-100 text-forest-800 border border-forest-200">Next.js</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-100 text-forest-800 border border-forest-200">Tailwind CSS</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-100 text-forest-800 border border-forest-200">TypeScript</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-50 text-forest-700 border border-leafBorder">State Machines</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-50 text-forest-700 border border-leafBorder">Framer Motion</span>
+          </div>
+        </div>
+
+        <!-- Category: Databases & Storage -->
+        <div class="glass-card p-6 sm:p-8 rounded-3xl border border-leafBorder shadow-apple hover:shadow-apple-hover transition-all duration-300">
+          <div class="flex items-center justify-between mb-5">
+            <div class="w-10 h-10 rounded-xl bg-forest-100 text-forest-800 flex items-center justify-center">
+              <i data-lucide="database" class="w-5 h-5"></i>
+            </div>
+            <span class="text-xs font-mono font-medium text-forest-500">Persistence</span>
+          </div>
+          <h3 class="text-lg font-bold text-forest-900 mb-2">Databases & Storage</h3>
+          <p class="text-xs text-forest-600 mb-5 leading-relaxed">ACID guarantees, distributed replication, and multi-tiered caching.</p>
+          
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-100 text-forest-800 border border-forest-200">PostgreSQL</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-100 text-forest-800 border border-forest-200">Redis (In-Memory)</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-100 text-forest-800 border border-forest-200">MongoDB</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-50 text-forest-700 border border-leafBorder">Apache Kafka</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-50 text-forest-700 border border-leafBorder">Elasticsearch</span>
+          </div>
+        </div>
+
+        <!-- Category: Security & Protocols -->
+        <div class="glass-card p-6 sm:p-8 rounded-3xl border border-leafBorder shadow-apple hover:shadow-apple-hover transition-all duration-300">
+          <div class="flex items-center justify-between mb-5">
+            <div class="w-10 h-10 rounded-xl bg-forest-100 text-forest-800 flex items-center justify-center">
+              <i data-lucide="lock" class="w-5 h-5"></i>
+            </div>
+            <span class="text-xs font-mono font-medium text-forest-500">Security</span>
+          </div>
+          <h3 class="text-lg font-bold text-forest-900 mb-2">Security & Networking</h3>
+          <p class="text-xs text-forest-600 mb-5 leading-relaxed">Cryptographic keys, OAuth flows, and network boundary protection.</p>
+          
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-100 text-forest-800 border border-forest-200">OAuth 2.0 / OIDC</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-100 text-forest-800 border border-forest-200">JWT & mTLS</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-100 text-forest-800 border border-forest-200">VPC Peering</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-50 text-forest-700 border border-leafBorder">Cloudflare WAF</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-50 text-forest-700 border border-leafBorder">Vault</span>
+          </div>
+        </div>
+
+        <!-- Category: Developer Tools & Testing -->
+        <div class="glass-card p-6 sm:p-8 rounded-3xl border border-leafBorder shadow-apple hover:shadow-apple-hover transition-all duration-300">
+          <div class="flex items-center justify-between mb-5">
+            <div class="w-10 h-10 rounded-xl bg-forest-100 text-forest-800 flex items-center justify-center">
+              <i data-lucide="wrench" class="w-5 h-5"></i>
+            </div>
+            <span class="text-xs font-mono font-medium text-forest-500">Workflow</span>
+          </div>
+          <h3 class="text-lg font-bold text-forest-900 mb-2">Dev Tools & Testing</h3>
+          <p class="text-xs text-forest-600 mb-5 leading-relaxed">Rigorous automation and seamless developer environments.</p>
+          
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-100 text-forest-800 border border-forest-200">Git & GitOps</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-100 text-forest-800 border border-forest-200">Linux / Bash</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-100 text-forest-800 border border-forest-200">Jest & Playwright</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-50 text-forest-700 border border-leafBorder">Postman</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-forest-50 text-forest-700 border border-leafBorder">Vim / Neovim</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-forest-100/20 border-t border-leafBorder">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+          <div>
+            <span class="text-xs font-bold tracking-widest text-forest-600 uppercase bg-forest-100 px-3 py-1 rounded-full border border-forest-200">Engineering Work</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-forest-900 tracking-tight mt-3">Featured Projects</h2>
+            <p class="text-forest-600 text-sm sm:text-base mt-2">Production-grade systems, open-source utilities, and developer platforms.</p>
+          </div>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-forest-800 hover:text-forest-600 transition-colors">
+            <span>View All on GitHub</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- Project Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          
+          <!-- Project 1: ArborCloud -->
+          <div class="glass-card rounded-3xl border border-leafBorder overflow-hidden shadow-apple hover:shadow-apple-hover transition-all duration-300 flex flex-col group hover:-translate-y-1">
+            <!-- Project Image / Mockup Preview -->
+            <div class="relative h-56 bg-forest-900 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop" 
+                alt="Cloud network visual mockup" 
+                class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/30 to-transparent"></div>
+              
+              <div class="absolute top-4 right-4 bg-forest-800/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-mono font-medium text-forest-200 border border-forest-600">
+                Cloud Native
+              </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <h3 class="text-xl font-bold text-forest-900 group-hover:text-forest-600 transition-colors">ArborCloud Engine</h3>
+                <p class="text-xs text-forest-700 mt-2 leading-relaxed">
+                  Green computing daemon designed to dynamically scale Kubernetes workloads toward low-carbon cloud regions, reducing server power costs by up to 28%.
+                </p>
+                
+                <div class="flex flex-wrap gap-1.5 mt-4">
+                  <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-forest-50 text-forest-800 border border-leafBorder">Go</span>
+                  <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-forest-50 text-forest-800 border border-leafBorder">Kubernetes</span>
+                  <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-forest-50 text-forest-800 border border-leafBorder">Prometheus</span>
+                  <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-forest-50 text-forest-800 border border-leafBorder">AWS</span>
+                </div>
+              </div>
+
+              <!-- Links -->
+              <div class="pt-4 border-t border-leafBorder flex items-center justify-between text-xs font-semibold">
+                <button onclick="openProjectModal('ArborCloud', 'https://github.com', 'https://demo.example.dev')" class="text-forest-800 hover:text-forest-600 flex items-center gap-1.5">
+                  <i data-lucide="info" class="w-4 h-4"></i>
+                  <span>Architecture Details</span>
+                </button>
+                <div class="flex items-center gap-3 text-forest-600">
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-forest-900" title="Source Code">
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                  </a>
+                  <a href="#" onclick="showQuickToast('Opening Live Sandbox...'); return false;" class="hover:text-forest-900" title="Live Demo">
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: CanopyQL -->
+          <div class="glass-card rounded-3xl border border-leafBorder overflow-hidden shadow-apple hover:shadow-apple-hover transition-all duration-300 flex flex-col group hover:-translate-y-1">
+            <!-- Project Image -->
+            <div class="relative h-56 bg-forest-900 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop" 
+                alt="High speed database servers and wires" 
+                class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/30 to-transparent"></div>
+              
+              <div class="absolute top-4 right-4 bg-forest-800/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-mono font-medium text-forest-200 border border-forest-600">
+                Distributed Storage
+              </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <h3 class="text-xl font-bold text-forest-900 group-hover:text-forest-600 transition-colors">CanopyQL Graph Engine</h3>
+                <p class="text-xs text-forest-700 mt-2 leading-relaxed">
+                  In-memory distributed graph query database implemented in Rust with Raft consensus, designed for sub-millisecond social graph traversals and real-time fraud alerts.
+                </p>
+                
+                <div class="flex flex-wrap gap-1.5 mt-4">
+                  <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-forest-50 text-forest-800 border border-leafBorder">Rust</span>
+                  <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-forest-50 text-forest-800 border border-leafBorder">Raft</span>
+                  <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-forest-50 text-forest-800 border border-leafBorder">gRPC</span>
+                  <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-forest-50 text-forest-800 border border-leafBorder">RocksDB</span>
+                </div>
+              </div>
+
+              <!-- Links -->
+              <div class="pt-4 border-t border-leafBorder flex items-center justify-between text-xs font-semibold">
+                <button onclick="openProjectModal('CanopyQL', 'https://github.com', 'https://demo.example.dev')" class="text-forest-800 hover:text-forest-600 flex items-center gap-1.5">
+                  <i data-lucide="info" class="w-4 h-4"></i>
+                  <span>Architecture Details</span>
+                </button>
+                <div class="flex items-center gap-3 text-forest-600">
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-forest-900" title="Source Code">
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                  </a>
+                  <a href="#" onclick="showQuickToast('Opening Live Sandbox...'); return false;" class="hover:text-forest-900" title="Live Demo">
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: MossPay -->
+          <div class="glass-card rounded-3xl border border-leafBorder overflow-hidden shadow-apple hover:shadow-apple-hover transition-all duration-300 flex flex-col group hover:-translate-y-1">
+            <!-- Project Image -->
+            <div class="relative h-56 bg-forest-900 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=800&auto=format&fit=crop" 
+                alt="Clean fintech analytics interface" 
+                class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/30 to-transparent"></div>
+              
+              <div class="absolute top-4 right-4 bg-forest-800/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-mono font-medium text-forest-200 border border-forest-600">
+                FinTech API
+              </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <h3 class="text-xl font-bold text-forest-900 group-hover:text-forest-600 transition-colors">MossPay Transaction Core</h3>
+                <p class="text-xs text-forest-700 mt-2 leading-relaxed">
+                  Idempotent payment processing gateway with zero-knowledge verification, sub-100ms response latencies, and automated reconciliation for global commerce.
+                </p>
+                
+                <div class="flex flex-wrap gap-1.5 mt-4">
+                  <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-forest-50 text-forest-800 border border-leafBorder">TypeScript</span>
+                  <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-forest-50 text-forest-800 border border-leafBorder">PostgreSQL</span>
+                  <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-forest-50 text-forest-800 border border-leafBorder">Redis</span>
+                  <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-forest-50 text-forest-800 border border-leafBorder">Docker</span>
+                </div>
+              </div>
+
+              <!-- Links -->
+              <div class="pt-4 border-t border-leafBorder flex items-center justify-between text-xs font-semibold">
+                <button onclick="openProjectModal('MossPay', 'https://github.com', 'https://demo.example.dev')" class="text-forest-800 hover:text-forest-600 flex items-center gap-1.5">
+                  <i data-lucide="info" class="w-4 h-4"></i>
+                  <span>Architecture Details</span>
+                </button>
+                <div class="flex items-center gap-3 text-forest-600">
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-forest-900" title="Source Code">
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                  </a>
+                  <a href="#" onclick="showQuickToast('Opening Live Sandbox...'); return false;" class="hover:text-forest-900" title="Live Demo">
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="certifications" class="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold tracking-widest text-forest-600 uppercase bg-forest-100 px-3 py-1 rounded-full border border-forest-200">Validation</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-forest-900 tracking-tight mt-3">Certifications & Honors</h2>
+        <p class="text-forest-600 text-sm sm:text-base mt-2">Accredited industry standards in enterprise cloud and container orchestration.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Cert 1: AWS Solutions Architect -->
+        <div class="glass-card p-6 rounded-3xl border border-leafBorder shadow-apple hover:shadow-apple-hover transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-200/60 text-amber-700 flex items-center justify-center mb-4">
+              <i data-lucide="badge-check" class="w-6 h-6"></i>
+            </div>
+            <span class="text-[11px] font-mono uppercase tracking-wider text-forest-500 font-semibold">Amazon Web Services</span>
+            <h3 class="text-base font-bold text-forest-900 mt-1">AWS Solutions Architect – Associate</h3>
+            <p class="text-xs text-forest-600 mt-2">Issued May 2024 • Active</p>
+            <p class="text-[11px] font-mono text-forest-500 mt-1 truncate">ID: AWS-PSA-884920</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-leafBorder">
+            <button onclick="showQuickToast('Credential verified via AWS Credly Badge')" class="text-xs font-semibold text-forest-800 hover:text-forest-600 flex items-center gap-1">
+              <span>Verify Credential</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Cert 2: CKA -->
+        <div class="glass-card p-6 rounded-3xl border border-leafBorder shadow-apple hover:shadow-apple-hover transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-200/60 text-blue-700 flex items-center justify-center mb-4">
+              <i data-lucide="boxes" class="w-6 h-6"></i>
+            </div>
+            <span class="text-[11px] font-mono uppercase tracking-wider text-forest-500 font-semibold">Cloud Native Computing Foundation</span>
+            <h3 class="text-base font-bold text-forest-900 mt-1">Certified Kubernetes Administrator (CKA)</h3>
+            <p class="text-xs text-forest-600 mt-2">Issued Nov 2024 • Active</p>
+            <p class="text-[11px] font-mono text-forest-500 mt-1 truncate">ID: CKA-2400-8819</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-leafBorder">
+            <button onclick="showQuickToast('Credential verified via Linux Foundation')" class="text-xs font-semibold text-forest-800 hover:text-forest-600 flex items-center gap-1">
+              <span>Verify Credential</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Cert 3: Google Cloud Architect -->
+        <div class="glass-card p-6 rounded-3xl border border-leafBorder shadow-apple hover:shadow-apple-hover transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-200/60 text-forest-700 flex items-center justify-center mb-4">
+              <i data-lucide="cloud-cog" class="w-6 h-6"></i>
+            </div>
+            <span class="text-[11px] font-mono uppercase tracking-wider text-forest-500 font-semibold">Google Cloud</span>
+            <h3 class="text-base font-bold text-forest-900 mt-1">Professional Cloud Architect</h3>
+            <p class="text-xs text-forest-600 mt-2">Issued Feb 2025 • Active</p>
+            <p class="text-[11px] font-mono text-forest-500 mt-1 truncate">ID: GCP-PCA-49102</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-leafBorder">
+            <button onclick="showQuickToast('Credential verified via Google Certification Hub')" class="text-xs font-semibold text-forest-800 hover:text-forest-600 flex items-center gap-1">
+              <span>Verify Credential</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Cert 4: Terraform Associate -->
+        <div class="glass-card p-6 rounded-3xl border border-leafBorder shadow-apple hover:shadow-apple-hover transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-purple-50 border border-purple-200/60 text-purple-700 flex items-center justify-center mb-4">
+              <i data-lucide="layers" class="w-6 h-6"></i>
+            </div>
+            <span class="text-[11px] font-mono uppercase tracking-wider text-forest-500 font-semibold">HashiCorp</span>
+            <h3 class="text-base font-bold text-forest-900 mt-1">Terraform Associate (003)</h3>
+            <p class="text-xs text-forest-600 mt-2">Issued Aug 2024 • Active</p>
+            <p class="text-[11px] font-mono text-forest-500 mt-1 truncate">ID: HASH-TA-99312</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-leafBorder">
+            <button onclick="showQuickToast('Credential verified via HashiCorp')" class="text-xs font-semibold text-forest-800 hover:text-forest-600 flex items-center gap-1">
+              <span>Verify Credential</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-forest-100/30 border-t border-leafBorder">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          <!-- Contact Narrative Column -->
+          <div class="lg:col-span-5 space-y-6">
+            <span class="text-xs font-bold tracking-widest text-forest-600 uppercase bg-forest-100 px-3 py-1 rounded-full border border-forest-200">Get In Touch</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-forest-900 tracking-tight">Let’s build something remarkable.</h2>
+            <p class="text-forest-700 text-sm sm:text-base leading-relaxed">
+              Whether you're scoping a new distributed service, looking to optimize infrastructure expenditure, or seeking a collaborative software engineer, my inbox is always open.
+            </p>
+
+            <!-- Direct Contact Methods -->
+            <div class="space-y-4 pt-4">
+              
+              <!-- Email Card with 1-Click Copy -->
+              <div class="p-4 rounded-2xl glass-card border border-leafBorder flex items-center justify-between shadow-sm">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-forest-100 text-forest-800 flex items-center justify-center">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <span class="text-[11px] font-medium text-forest-500 uppercase tracking-wider block">Email Address</span>
+                    <span class="text-sm font-semibold text-forest-900" id="email-address-text">julian.vance@example.dev</span>
+                  </div>
+                </div>
+                <button onclick="copyToClipboard('julian.vance@example.dev')" class="p-2.5 rounded-xl hover:bg-forest-100 text-forest-700 transition-colors" title="Copy Email">
+                  <i data-lucide="copy" class="w-4 h-4"></i>
+                </button>
+              </div>
+
+              <!-- Location Details -->
+              <div class="p-4 rounded-2xl glass-card border border-leafBorder flex items-center gap-3 shadow-sm">
+                <div class="w-10 h-10 rounded-xl bg-forest-100 text-forest-800 flex items-center justify-center">
+                  <i data-lucide="globe" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <span class="text-[11px] font-medium text-forest-500 uppercase tracking-wider block">Location & Availability</span>
+                  <span class="text-sm font-semibold text-forest-900">San Francisco, CA (PST / UTC-7) • Remote Friendly</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Contact Form Card -->
+          <div class="lg:col-span-7">
+            <div class="glass-card p-8 sm:p-10 rounded-3xl border border-leafBorder shadow-apple">
+              <h3 class="text-xl font-bold text-forest-900 mb-2">Send a Message</h3>
+              <p class="text-xs text-forest-600 mb-6">Fill out the quick form below and I'll respond within 24 hours.</p>
+
+              <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-5">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="name" class="block text-xs font-semibold text-forest-800 mb-1.5">Your Name</label>
+                    <input 
+                      type="text" 
+                      id="name" 
+                      required 
+                      placeholder="e.g. Linus Torvalds"
+                      class="w-full px-4 py-3 rounded-xl border border-leafBorder bg-white/70 focus:bg-white text-forest-900 text-sm focus:outline-none focus:ring-2 focus:ring-forest-600 focus:border-transparent transition-all placeholder:text-forest-400"
+                    >
+                  </div>
+                  <div>
+                    <label for="email" class="block text-xs font-semibold text-forest-800 mb-1.5">Email Address</label>
+                    <input 
+                      type="email" 
+                      id="email" 
+                      required 
+                      placeholder="name@company.com"
+                      class="w-full px-4 py-3 rounded-xl border border-leafBorder bg-white/70 focus:bg-white text-forest-900 text-sm focus:outline-none focus:ring-2 focus:ring-forest-600 focus:border-transparent transition-all placeholder:text-forest-400"
+                    >
+                  </div>
+                </div>
+
+                <div>
+                  <label for="subject" class="block text-xs font-semibold text-forest-800 mb-1.5">Subject / Opportunity</label>
+                  <input 
+                    type="text" 
+                    id="subject" 
+                    required 
+                    placeholder="Full-Time Engineering Role / Collaboration"
+                    class="w-full px-4 py-3 rounded-xl border border-leafBorder bg-white/70 focus:bg-white text-forest-900 text-sm focus:outline-none focus:ring-2 focus:ring-forest-600 focus:border-transparent transition-all placeholder:text-forest-400"
+                  >
+                </div>
+
+                <div>
+                  <label for="message" class="block text-xs font-semibold text-forest-800 mb-1.5">Your Message</label>
+                  <textarea 
+                    id="message" 
+                    rows="4" 
+                    required 
+                    placeholder="Tell me about your team, tech stack, or engineering challenges..."
+                    class="w-full px-4 py-3 rounded-xl border border-leafBorder bg-white/70 focus:bg-white text-forest-900 text-sm focus:outline-none focus:ring-2 focus:ring-forest-600 focus:border-transparent transition-all placeholder:text-forest-400"
+                  ></textarea>
+                </div>
+
+                <button 
+                  type="submit" 
+                  id="submit-btn" 
+                  class="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-forest-800 hover:bg-forest-600 text-white font-semibold text-sm shadow-apple hover:shadow-apple-hover transition-all duration-300 hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2"
+                >
+                  <i data-lucide="send" class="w-4 h-4"></i>
+                  <span>Transmit Message</span>
+                </button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-leafBorder bg-forest-50 py-12 relative z-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Nature Quotation -->
+      <div class="text-center py-6 border-b border-leafBorder/80 max-w-xl mx-auto">
+        <p class="italic text-sm text-forest-700 font-serif">
+          “Nature does not hurry, yet everything is accomplished.”
+        </p>
+        <span class="block text-xs font-mono text-forest-500 uppercase tracking-widest mt-1.5">— Lao Tzu</span>
+      </div>
+
+      <!-- Bottom Nav and Legal -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-forest-600">
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 rounded-lg bg-forest-800 flex items-center justify-center text-forest-100">
+            <i data-lucide="trees" class="w-3.5 h-3.5 text-forest-300"></i>
+          </div>
+          <span class="font-medium text-forest-800">Julian Vance © 2026. All rights reserved.</span>
+        </div>
+
+        <div class="flex items-center gap-6">
+          <a href="#hero" class="hover:text-forest-900 transition-colors">Back to top</a>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-forest-900 transition-colors">GitHub</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-forest-900 transition-colors">LinkedIn</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Non-intrusive Toast Box -->
+  <div id="toast-notification" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 ease-out pointer-events-none">
+    <div class="glass-card border border-forest-300 px-5 py-3.5 rounded-2xl shadow-apple-hover flex items-center gap-3 text-sm text-forest-900">
+      <div class="w-8 h-8 rounded-full bg-forest-100 flex items-center justify-center text-forest-700 flex-shrink-0" id="toast-icon-wrap">
+        <i data-lucide="check" class="w-4 h-4"></i>
+      </div>
+      <div>
+        <p class="font-bold text-xs" id="toast-title">Notification</p>
+        <p class="text-xs text-forest-600" id="toast-msg">Action performed successfully.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-forest-900/40 backdrop-blur-sm transition-opacity duration-300">
+    <div class="glass-card max-w-lg w-full rounded-3xl border border-leafBorder shadow-2xl p-6 sm:p-8 space-y-5 relative">
+      <button onclick="closeProjectModal()" class="absolute top-5 right-5 p-2 rounded-full text-forest-500 hover:text-forest-900 hover:bg-forest-100 transition-colors">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-forest-100 text-forest-800 flex items-center justify-center">
+          <i data-lucide="cpu" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h3 id="modal-project-title" class="text-xl font-bold text-forest-900">Project Overview</h3>
+          <p class="text-xs text-forest-500">System Architecture Breakdown</p>
+        </div>
+      </div>
+
+      <div class="text-xs text-forest-700 space-y-3 leading-relaxed">
+        <p>
+          This engineering implementation utilizes asynchronous pipelines, zero-copy data structures, and automated canary deployment strategies to ensure high availability.
+        </p>
+        <ul class="list-disc pl-5 space-y-1.5">
+          <li>Stateless orchestrator balancing across multi-region Kubernetes clusters.</li>
+          <li>Sub-2ms cache hits via Redis Cluster with read-through fallback logic.</li>
+          <li>Continuous vulnerability scanning and automated SBOM tracking.</li>
+        </ul>
+      </div>
+
+      <div class="pt-4 border-t border-leafBorder flex items-center justify-end gap-3">
+        <button onclick="closeProjectModal()" class="px-5 py-2.5 rounded-xl text-xs font-semibold text-forest-700 hover:bg-forest-100 transition-colors">
+          Close
+        </button>
+        <a id="modal-project-github" href="#" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl text-xs font-semibold bg-forest-800 text-white hover:bg-forest-600 transition-colors flex items-center gap-2">
+          <i data-lucide="github" class="w-4 h-4"></i>
+          <span>View Source</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Render Lucide icons
+      lucide.createIcons();
+
+      // Render realistic GitHub Contribution Heatmap
+      renderGitHubHeatmap();
+
+      // Mobile Menu Toggle
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close drawer on link click
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+          });
+        });
+      }
+    });
+
+    // Generate 26 weeks x 7 days GitHub Contribution Grid to fit perfectly in right column
+    function renderGitHubHeatmap() {
+      const container = document.getElementById('github-heatmap');
+      if (!container) return;
+
+      const levels = [
+        'bg-forest-100 border border-forest-200/50', // 0 commits
+        'bg-forest-300',                             // 1-3 commits
+        'bg-forest-400',                             // 4-6 commits
+        'bg-forest-600',                             // 7-9 commits
+        'bg-forest-800'                              // 10+ commits
+      ];
+
+      const weeks = 26;
+      const days = 7;
+      let html = '';
+
+      for (let w = 0; w < weeks; w++) {
+        html += '<div class="flex flex-col gap-1">';
+        for (let d = 0; d < days; d++) {
+          // Weighted pseudo-random distribution biased toward active development
+          const rand = Math.random();
+          let levelIdx = 0;
+          if (rand > 0.82) levelIdx = 4;
+          else if (rand > 0.6) levelIdx = 3;
+          else if (rand > 0.4) levelIdx = 2;
+          else if (rand > 0.22) levelIdx = 1;
+          else levelIdx = 0;
+
+          const commitCounts = [0, 2, 5, 8, 14];
+          const count = commitCounts[levelIdx];
+          const tooltip = count === 0 ? 'No contributions' : `${count} contributions`;
+
+          html += `<div 
+            class="w-2.5 h-2.5 rounded-[2px] ${levels[levelIdx]} transition-transform duration-150 hover:scale-125 cursor-pointer" 
+            title="${tooltip}" 
+            onclick="showQuickToast('${tooltip} on this day', 'GitHub Activity')"
+          ></div>`;
+        }
+        html += '</div>';
+      }
+
+      container.innerHTML = html;
+    }
+
+    let toastTimeout;
+    function showQuickToast(message, title = 'Status Notice') {
+      const toast = document.getElementById('toast-notification');
+      const toastMsg = document.getElementById('toast-msg');
+      const toastTitle = document.getElementById('toast-title');
+
+      if (!toast) return;
+
+      toastMsg.innerText = message;
+      toastTitle.innerText = title;
+
+      toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+      }, 3500);
+    }
+
+    function copyToClipboard(text) {
+      // Use fallback execCommand for compatibility
+      const dummy = document.createElement('textarea');
+      document.body.appendChild(dummy);
+      dummy.value = text;
+      dummy.select();
+      try {
+        document.execCommand('copy');
+        showQuickToast('Email address copied to clipboard!', 'Copied');
+      } catch (err) {
+        showQuickToast('julian.vance@example.dev', 'Direct Email');
+      }
+      document.body.removeChild(dummy);
+    }
+
+    function handleDownloadCV(e) {
+      if (e) e.preventDefault();
+      showQuickToast('Preparing Julian Vance CV (Software Engineer)...', 'Download Started');
+      // Mock delayed completion
+      setTimeout(() => {
+        showQuickToast('Julian_Vance_Resume.pdf downloaded successfully.', 'Ready');
+      }, 1200);
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const submitBtn = document.getElementById('submit-btn');
+      const originalText = submitBtn.innerHTML;
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `
+        <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        <span>Transmitting...</span>
+      `;
+
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+        document.getElementById('contact-form').reset();
+        showQuickToast('Your message has been safely received. I will reply soon!', 'Message Sent');
+      }, 1100);
+    }
+
+    function openProjectModal(title, githubUrl, liveUrl) {
+      const modal = document.getElementById('project-modal');
+      const modalTitle = document.getElementById('modal-project-title');
+      const modalGithub = document.getElementById('modal-project-github');
+
+      if (!modal) return;
+
+      modalTitle.innerText = title;
+      modalGithub.href = githubUrl || '#';
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeProjectModal() {
+      const modal = document.getElementById('project-modal');
+      if (!modal) return;
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // Close modal on click outside content
+    window.addEventListener('click', (e) => {
+      const modal = document.getElementById('project-modal');
+      if (e.target === modal) {
+        closeProjectModal();
+      }
+    });
+  </script>
 
 </body>
 </html>
